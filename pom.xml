@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.tc-group</groupId>
+    <artifactId>vilear</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>vilear</name>
+    <packaging>pom</packaging>
+    
+    <modules>
+        <module>vilear-base</module>
+        <module>vilear-partner</module>
+        <module>vilear-registration</module>
+        <module>vilear-sender</module>
+        <module>vilear-course</module>
+        <module>vilear-auth</module>
+    </modules>
+</project>
