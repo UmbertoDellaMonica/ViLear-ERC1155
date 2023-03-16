@@ -62,9 +62,10 @@ public class VilearCourseSecurityConfig {
                         RoleEnum.SUPER_ADMIN.name(),
                         RoleEnum.SUPER_PARTNER.name()
                 )
-                .antMatchers("/teacher/evaluation").hasRole(RoleEnum.TEACHER.name())
-                .antMatchers("/student/evaluation").hasRole(RoleEnum.STUDENT.name())
-                .antMatchers("/student").hasRole(RoleEnum.STUDENT.name())
+                .antMatchers("/teacher/evaluation/**").hasAnyRole(RoleEnum.TEACHER.name(),RoleEnum.STUDENT.name())
+                .antMatchers("/student/evaluation").hasAnyRole(RoleEnum.STUDENT.name())
+                .antMatchers("/course/student/certificate").hasAnyRole(RoleEnum.STUDENT.name())
+                .antMatchers("/student").hasAnyRole(RoleEnum.STUDENT.name())
                 .and()
                 .formLogin().and().logout().disable();
         return http.build();

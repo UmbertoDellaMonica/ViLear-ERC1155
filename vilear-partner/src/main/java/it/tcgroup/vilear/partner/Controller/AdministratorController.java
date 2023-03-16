@@ -1,5 +1,6 @@
 package it.tcgroup.vilear.partner.Controller;
 
+import it.tcgroup.vilear.base.Payload.Enum.DecisionEnum;
 import it.tcgroup.vilear.base.Payload.Response.*;
 import it.tcgroup.vilear.partner.Client.ServiceClient.VilearCourseServiceClient;
 import it.tcgroup.vilear.partner.Client.ServiceClient.VilearRegistrationServiceClient;
@@ -52,6 +53,7 @@ public class AdministratorController {
 
         return new ResponseEntity<>(partnerResponse, HttpStatus.OK);
     }
+
 
     /**
      * Eliminazione di una Logistica

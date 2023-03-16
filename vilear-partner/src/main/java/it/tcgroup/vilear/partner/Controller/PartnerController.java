@@ -15,6 +15,7 @@ import it.tcgroup.vilear.base.Payload.Response.*;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -57,12 +58,14 @@ public class PartnerController  {
      * @param decision si riferisce ad ACCEPT/DENY
      * @return PartnerCandidationResponse
      */
-    @PutMapping(path = "")
+    @PutMapping(path = "/choose")
     public ResponseEntity<PartnerCandidationResponse> choose(
-        @RequestHeader("partner_id") Integer partnerId,
-        @RequestParam("decision") DecisionEnum decision
+            @RequestHeader("partner_id") Integer partnerId,
+            @RequestParam("decision") DecisionEnum decision,
+            HttpServletRequest request
     ) {
         // Accettazione/Rifiuto della Candidatura
+        String token= request.getHeader(HttpHeaders.AUTHORIZATION);
         PartnerModel partnerModel = partnerService.get(partnerId);
         PartnerCandidationResponse partnerCandidationResponse = vilearRegistrationServiceClient.choose(partnerModel,decision);
 

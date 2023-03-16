@@ -44,11 +44,6 @@ public class VilearSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole(RoleEnum.SUPER_ADMIN.name())
                 // Set End Point for External Call
                 .antMatchers("/external/**").anonymous()
-                // set end Point for PartnerCandidation Controller:
-                .antMatchers("/user/partner/candidate").hasAnyRole(
-                        RoleEnum.PARTNER.name(),
-                        RoleEnum.SUPER_PARTNER.name()
-                )
                 // set end Point for Person Controller
                 // Test this route
                 .antMatchers("/user/person").hasAnyRole(

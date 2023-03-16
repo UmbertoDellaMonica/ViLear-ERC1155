@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
         url = "${feign.url.sender.host}:${feign.url.sender.port}")
 public interface VilearSenderClient {
 
-    @RequestMapping(method = RequestMethod.POST,value = "/email/invite", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST,
+            value = "/email/invite", produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<Boolean> sendInviteEmail(
             @RequestBody EmailRequest emailRequest
     );

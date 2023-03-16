@@ -49,7 +49,7 @@ public class JwtCheckTokenFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
             filterChain.doFilter(request,response);
-            return;
+           return;
     }
 
     private Authentication retrieveDataAuthentication(String token) {

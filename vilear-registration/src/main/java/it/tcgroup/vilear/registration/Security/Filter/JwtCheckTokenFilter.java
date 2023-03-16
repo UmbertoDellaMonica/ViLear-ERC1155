@@ -37,9 +37,10 @@ public class JwtCheckTokenFilter extends OncePerRequestFilter {
             // Controllo se la request contiene questo uri
         if(
                 request.getRequestURI().equalsIgnoreCase("/user/registration") ||
-                request.getRequestURI().equalsIgnoreCase("/external/partner/candidate") ||
+                request.getRequestURI().equalsIgnoreCase("/user/partner/candidate") ||
                 request.getRequestURI().equalsIgnoreCase("/external/person") ||
-                request.getRequestURI().equalsIgnoreCase("/external/person/role")
+                request.getRequestURI().equalsIgnoreCase("/external/person/role") ||
+                request.getRequestURI().equalsIgnoreCase("/external/admin/candidate/choose")
         ){
             // Se le contiene vai avanti
             filterChain.doFilter(request,response);

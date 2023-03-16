@@ -94,23 +94,6 @@ public class AdminstratorController {
         return new ResponseEntity<>(userResponsePaginatedResponse, HttpStatus.OK);
     }
 
-    /**
-     * Chiamata dal Partner-Client per
-     * - Modificare l'utente impostando lo stato a True
-     * - Modifica lo stato della Partecipazione in APPROVED/REJECTED
-     * @param userId id dell'utente
-     * @param decision DENY/ACCEPT
-     */
-    @PutMapping(path = "/candidate/choose")
-    public ResponseEntity<PartnerCandidationResponse> choose(
-            @RequestParam(name = "user_id") Integer userId,
-            @RequestParam(name = "decision") DecisionEnum decision
-    ){
-        PartnerCandidationModel partnerCandidationModel = partnerCandidationService.choose(userId,decision);
-        PartnerCandidationResponse partnerCandidationResponse = mapper.map(partnerCandidationModel,PartnerCandidationResponse.class);
-
-        return new ResponseEntity<>(partnerCandidationResponse,HttpStatus.OK);
-    }
 
     /**
      * Recupera tutti gli inviti

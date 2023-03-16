@@ -45,7 +45,10 @@ public class VilearPartnerSecurityConfig  {
                 // Set End Point for Partner
                 .antMatchers(HttpMethod.GET,"/partner").hasAnyRole(RoleEnum.PARTNER.name())
                 .antMatchers("external/partner/**").anonymous()
-                .antMatchers(HttpMethod.PUT,"/partner").hasAnyRole(RoleEnum.SUPER_ADMIN.name())
+                .antMatchers(HttpMethod.PUT,"/partner/choose").hasAnyRole(
+                        RoleEnum.SUPER_PARTNER.name(),
+                        RoleEnum.SUPER_ADMIN.name()
+                )
                 .antMatchers("/admin/partner/**").hasRole(RoleEnum.SUPER_ADMIN.name())
                 .antMatchers("/logistic/**").hasAnyRole(
                         RoleEnum.SUPER_PARTNER.name(),

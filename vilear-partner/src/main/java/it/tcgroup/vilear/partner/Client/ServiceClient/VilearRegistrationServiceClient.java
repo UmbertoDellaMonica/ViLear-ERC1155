@@ -29,9 +29,10 @@ public interface VilearRegistrationServiceClient {
     /**
      * Call at Vilear-Registration
      * Accetta o Rifiuta lo stato della Candidatura
+     *
      * @param partnerModel contiene i dati del Partner
      * @param decisionEnum ACCEPT/DENY
-     * PUT_METHOD
+     *                     PUT_METHOD
      */
     PartnerCandidationResponse choose(PartnerModel partnerModel, DecisionEnum decisionEnum);
 

@@ -20,7 +20,7 @@ public interface VilearRegistrationClient {
      * @param decisionEnum ACCEPT/DENY
      */
     @RequestMapping(method = RequestMethod.PUT,
-            value = "/admin/candidate/choose",
+            value = "/external/admin/candidate/choose",
             produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<PartnerCandidationResponse> choose(
             @RequestParam(name = "user_id") Integer userId,
