@@ -65,7 +65,7 @@ contract CertificatoCorso is ERC1155 {
     // Questa funzione mi permette di poter recuperare un certificato in base a chi mi ha mandato la richiesta e all'id che mi sta passado se questo ovviamente ce l'ha nella sua struttura
     function getCertificato(uint idCertificato)public view returns(string memory){
         require(idCertificato >0,"L'id del certificato non e' valido ");
-        return CertificatoToString(_infoUtenteWithCertificati[_msgSender()][idCertificato]);
+        return CertificatoToString(_infoUtenteWithCertificati[msg.sender][idCertificato]);
     }
 
 

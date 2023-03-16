@@ -15,7 +15,7 @@ public class BlockchainServiceImpl implements BlockchainService{
 
     public final static Web3j web3j = Web3j.build(new HttpService("HTTP://127.0.0.1:7545"));
 
-    public final static String CONTRACT_ADDRESS_CERTIFICATE_CORSO_VILEAR = "0x50D088CB2b3FD919e65502F0be37725c2c255066";
+    public final static String CONTRACT_ADDRESS_CERTIFICATE_CORSO_VILEAR = "0xB83269edeac97F686961091Cc58cb19182e2f3f8";
 
     private CertificatoCorsoViLear certificatoCorsoViLear;
 
@@ -25,14 +25,7 @@ public class BlockchainServiceImpl implements BlockchainService{
         return credentials;
     }
 
-    @Override
-    public Boolean checkSmartContract(){
-        if(certificatoCorsoViLear==null){
-            return Boolean.FALSE;
-        }else{
-            return Boolean.TRUE;
-        }
-    }
+
 
     @Override
     public void initSmartContractCertificatoCorsoViLear(Credentials credentials) {

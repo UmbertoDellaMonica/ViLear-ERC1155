@@ -21,11 +21,6 @@ public interface BlockchainService {
     void initSmartContractCertificatoCorsoViLear(Credentials credentials);
 
     /**
-     * Verifica se uno Smart Contract è stato inzializzato oppure no
-     */
-    Boolean checkSmartContract();
-
-    /**
      * Registra un certificato all'interno della Blockchain
      * @param idCertificato id del certificato
      * @param certificateCourse certificato relativo al corso

@@ -37,32 +37,19 @@ public class CertificateCourseSCServiceImpl implements CertificateCourseSCServic
         // Recupero le credenziali dalla BlockChain
         Credentials credentialsUser = blockchainService.initCredentials(privateKey);
         // Verifico se lo Smart Contract che sia inizializzato oppure no
-        if(blockchainService.checkSmartContract()){
-            // è inizializzato allora
-            return blockchainService.registerCertificato(BigInteger.valueOf(evaluationId), certificateCourse);
-        }else{
-            // Non è inizializzato
-            // Lo inizializzo
-            blockchainService.initSmartContractCertificatoCorsoViLear(credentialsUser);
-            // Eseguo la registrazione()
-            return blockchainService.registerCertificato(BigInteger.valueOf(evaluationId), certificateCourse);
-        }
+        blockchainService.initSmartContractCertificatoCorsoViLear(credentialsUser);
+        // Eseguo la registrazione()
+        return blockchainService.registerCertificato(BigInteger.valueOf(evaluationId), certificateCourse);
     }
 
     @Override
     public String getCertificato(Integer evaluationId, String privateKey) throws Exception {
         // Recupera le informazioni dell'utente
         Credentials credentialsUser = blockchainService.initCredentials(privateKey);
-        if(blockchainService.checkSmartContract()){
-            // è inizializzato allora
-            return blockchainService.getCertificato(evaluationId);
-        }else{
-            // Non è inizializzato
-            // Lo inizializzo
-            blockchainService.initSmartContractCertificatoCorsoViLear(credentialsUser);
-            // Eseguo la registrazione()
-            return blockchainService.getCertificato(evaluationId);
-        }
+        // Lo inizializzo
+        blockchainService.initSmartContractCertificatoCorsoViLear(credentialsUser);
+        // Eseguo la registrazione()
+        return blockchainService.getCertificato(evaluationId);
     }
     private CertificateCourse create(Integer evaluationId, Integer courseId, Integer teacherCourseId){
         // Prendo la valutazione dello studente insieme ai suoi dati
