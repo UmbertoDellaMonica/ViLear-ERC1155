@@ -46,6 +46,12 @@ public class StudentCertificateController {
       }
     }
 
+    /**
+     * Ottiene un singolo Certificato tramite l'id della valutazione
+     * @param evaluationId id della valutazione
+     * @param privateKey chiave privata dell'accout
+     * @throws Exception
+     */
     @GetMapping("")
     public ResponseEntity<String> getCertificato(
             @RequestHeader(name = "evaluation_id")Integer evaluationId,

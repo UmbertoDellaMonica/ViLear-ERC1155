@@ -15,7 +15,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("User")
+@RedisHash(value = "User",timeToLive = 300)
 public class UserJwt implements Serializable {
 
     @Id

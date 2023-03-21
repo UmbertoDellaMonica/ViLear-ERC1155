@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
@@ -19,7 +21,7 @@ public class PersonRequest implements Serializable {
     private String birthPlace;
     @JsonProperty("birthdate")
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date birthDate;
+    private Timestamp birthDate;
     @JsonProperty("phone_number")
     private String phoneNumber;
     @JsonProperty("zip_code")
